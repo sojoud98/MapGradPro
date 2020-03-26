@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "95963118804",
+    "firebase_url": "https://mapit-df43e.firebaseio.com",
+    "project_id": "mapit-df43e",
+    "storage_bucket": "mapit-df43e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95963118804:android:0e88b4cbc4ae4dc2244f41",
+        "android_client_info": {
+          "package_name": "ideal.com.ps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95963118804-kja4749j16etlp58hfpkdlu618tt96sf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKPyl7gQsh0rbmlutoY0oBcW00CRZekF8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95963118804-kja4749j16etlp58hfpkdlu618tt96sf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

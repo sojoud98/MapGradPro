@@ -13,6 +13,8 @@ import android.widget.Toast;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -27,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     LocationRequest locationRequest;
     FusedLocationProviderClient fuesedLocationProviderClient;
     TextView t;
-
     public static MainActivity getInstance() {
         return instance;
 
@@ -61,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
-                Log.e("fuck","fuckwww");
 
 
             }

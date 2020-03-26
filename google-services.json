@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1043135217321",
+    "firebase_url": "https://mapitproject-89b52.firebaseio.com",
+    "project_id": "mapitproject-89b52",
+    "storage_bucket": "mapitproject-89b52.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043135217321:android:f35d83ac083011edc233b8",
+        "android_client_info": {
+          "package_name": "ideal.com.ps.mapgradpro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043135217321-teqf890krtdhi91mokai8la9egcfndjg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD02y8gG6T2alzzthewW4OuAsD5aPhYMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043135217321-teqf890krtdhi91mokai8la9egcfndjg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
