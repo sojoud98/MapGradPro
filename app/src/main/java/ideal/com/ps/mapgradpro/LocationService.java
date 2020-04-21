@@ -35,12 +35,23 @@ int i=1;
                     Location location=result.getLastLocation();
                     StringBuilder locationString=new StringBuilder("Location: "+location.getLatitude()+", "+location.getLongitude());
                     try {
-                        MainActivity.getInstance().updateTextView(locationString.toString());
+                         AccountManager am = AccountManager.get(context);
+                         Account[] accounts = am.getAccountsByType("com.google");
                         Map<String, Object> coord = new HashMap<>();
                         coord.put("lat",location.getLatitude());
                         coord.put("lng",location.getLongitude());
+                         coord.put("id",accounts.toString());
+                        coord.put("speed",location.getSpeed());
+                        long yourmilliseconds = System.currentTimeMillis();
+                        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");    
+                        Date resultdate = new Date(yourmilliseconds);
+                        coord.put("time",sdf.format(resultdate));
+                        MainActivity.getInstance().updateTextView(coord.toString());
                         DatabaseReference mref= FirebaseDatabase.getInstance().getReference().child("/coordinates");
                         mref.push().setValue(coord);
+                        Log.d("readings", coord);
+                        
+
                      }catch (Exception e){
                         Toast.makeText(context,locationString.toString(),Toast.LENGTH_LONG).show();
                     }
