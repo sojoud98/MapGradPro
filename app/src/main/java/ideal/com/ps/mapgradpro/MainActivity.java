@@ -13,8 +13,7 @@ import android.widget.Toast;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -84,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
         fuesedLocationProviderClient.requestLocationUpdates(locationRequest, getPendingIntent());
-
     }
 
     private PendingIntent getPendingIntent() {
@@ -96,8 +94,8 @@ public class MainActivity extends AppCompatActivity {
     private void buildLocationRequest() {
     locationRequest=new LocationRequest();
     locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-    locationRequest.setInterval(5000);
-    locationRequest.setFastestInterval(3000);
+    locationRequest.setInterval(2000);
+    locationRequest.setFastestInterval(1000);
     locationRequest.setSmallestDisplacement(10f);
     }
     public void updateTextView(final String v){
