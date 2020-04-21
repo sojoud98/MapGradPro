@@ -1,5 +1,8 @@
 package ideal.com.ps.mapgradpro;
 
+
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -15,11 +18,13 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LocationService extends BroadcastReceiver {
-int i=1;
+    int i=1;
     public static final String LOG="location service log";
     public LocationService() {
 
@@ -35,30 +40,28 @@ int i=1;
                     Location location=result.getLastLocation();
                     StringBuilder locationString=new StringBuilder("Location: "+location.getLatitude()+", "+location.getLongitude());
                     try {
-                         AccountManager am = AccountManager.get(context);
-                         Account[] accounts = am.getAccountsByType("com.google");
+                        AccountManager am = AccountManager.get(context);
+                        Account[] accounts = am.getAccountsByType("com.google");
                         Map<String, Object> coord = new HashMap<>();
                         coord.put("lat",location.getLatitude());
                         coord.put("lng",location.getLongitude());
-                         coord.put("id",accounts.toString());
+                        coord.put("id",accounts.toString());
                         coord.put("speed",location.getSpeed());
                         long yourmilliseconds = System.currentTimeMillis();
-                        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");    
+                        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");
                         Date resultdate = new Date(yourmilliseconds);
                         coord.put("time",sdf.format(resultdate));
                         MainActivity.getInstance().updateTextView(coord.toString());
                         DatabaseReference mref= FirebaseDatabase.getInstance().getReference().child("/coordinates");
                         mref.push().setValue(coord);
-                        Log.d("readings", coord);
-                        
+                        Log.d("readings", String.valueOf(coord));
 
-                     }catch (Exception e){
+
+                    }catch (Exception e){
                         Toast.makeText(context,locationString.toString(),Toast.LENGTH_LONG).show();
-                    }
                     }
                 }
             }
         }
     }
-
-
+}
